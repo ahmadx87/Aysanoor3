@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, target-densitydpi=medium-dpi" />
+      <link rel="stylesheet"  href="libs/jQM-flat/jquery.mobile.flatui.css">
+      <link type="text/css" rel="stylesheet" href="css/wheelcolorpicker.css" />
+	  <link rel="stylesheet" type="text/css" href="libs/fontello/css/rain.css" />
+	  <link rel="stylesheet" type="text/css" href="libs/jquery-alert.css" />
+      <link rel="stylesheet" type="text/css" href="css/index.css" />
+      
+	  <script type="text/javascript" src="libs/fastclick.min.js"></script>
+      <script type="text/javascript" src="cordova.js"></script>
+      <script type="text/javascript" src="libs/jquery-2.0.3.min.js"></script>
+      <script src="libs/jquery-ui.min.js"></script>
+      <script type="text/javascript" src="libs/jQueryMobile/jquery.mobile-1.4.5.js"></script>
+      <script type="text/javascript" src="js/jquery.wheelcolorpicker.js"></script>
+      <script src="libs/selectableScroll.js"></script>
+	  <script src="libs/jquery-alert.js"></script>
+      <script src="js/JavaScript.js"></script>
+      <title>AYSANOOR Smart WiFi Controller</title>
+   </head>
+   <body>
+      <div id="app">
+         <div  id="solidColor" data-role="page">
+            <div data-role="header" data-id="header" data-position="fixed" data-theme="a" data-tap-toggle="false" data-hide-during-focus="false">
+               <a href=""><i class="icon-rainwrench headerIcon settingsButton"></i></a>
+               <h1>آیسانور</h1>
+			   <a href="" ><i class="icon-rainoff headerIcon onOffButton"></i></a>
+            </div>
+			
+            <div data-role="content"  style="overflow: hidden; height:100%">
+               <div class="silderDiv">
+                  <p class="SliderTitle">روشنایی: <span class="sliderVal brightnessVal"></span></p>
+                  <!-- not required? : <label for="brightnessSlider" class="ui-hidden-accessible">Slider:</label>  -->
+                  <div id="brightnessSliderDiv">
+                     <input id="brightnessSlider" style="width:100%;" type="range" name="brightnessSlider" min="0" max="100" data-highlight="true"/>
+                  </div>
+               </div>
+               <br>
+               <div id="colorPickerDivWraper">
+                  <!-- link for RGB popup -->
+                  <div data-role="popup" id="popupRGBDialog" data-overlay-theme="a" data-transition="pop" data-theme="a" style="max-width:400px;" class="ui-corner-all">
+				  <table style="width:95%; margin:auto;">
+				 <tr>
+				 <td style="width: 15%;vertical-align:middle;" >
+				  <p class="colorSlider" style="color:#900; font-size: 0.9em ;">R: <span class="sliderValRGB"  id="colorSliderRNumber"></span>	</p>
+				 </td>
+				 <td style="width: 85%;vertical-align:middle;" id="colorSliderRCell">
+				  <input id="colorSliderR" style="width:100%;" type="range" name="colorSliderR" min="0" max="255" data-highlight="true"/>
+				 </td>
+				 </tr>
+				 
+				 <tr>
+				 <td style="width: 15%;vertical-align:middle;">
+				  <p class="colorSlider" style="color:#090;font-size: 0.9em ;">G: <span class="sliderValRGB"  id="colorSliderGNumber"></span>	</p>
+				 </td>
+				 <td style="width: 85%;vertical-align:middle;" id="colorSliderGCell">
+				  <input id="colorSliderG" style="width:100%;" type="range" name="colorSliderG" min="0" max="255" data-highlight="true"/>
+				 </td>
+				 </tr>
+				 
+				 <tr>
+				 <td style="width: 15%;vertical-align:middle;">
+				  <p class="colorSlider" style="color:#009;font-size: 0.9em ;">B: <span class="sliderValRGB"  id="colorSliderBNumber"></span>	</p>
+				 </td>
+				 <td style="width: 58%;vertical-align:middle;" id="colorSliderBCell">
+				  <input id="colorSliderB" style="width:100%;" type="range" name="colorSliderB" min="0" max="255" data-highlight="true"/>
+				 </td>
+				 </tr>
+
+				 </table>
+				 <a href="#" id="cancelButtonRGBDialog" data-role="button" data-inline="true" data-rel="back" data-theme="c">انصراف</a>    
+                        <a href="#" id="okButtonRGBDialog" data-role="button" data-inline="true" data-rel="back" data-transition="flow" data-theme="a">تایید</a>
+                  </div>
+                  <div id="colorPickerRGBIcon" >
+                     <table id="RGBTable" style="font-weight:bold;border-spacing: 0;border-collapse: collapse;">
+                        <tr>
+						<td>
+						<span style="color:#2c3e50; font-size:1.6em;"><i class="icon-rainsliders"></i></span>
+						   </td>
+						</tr>
+                     </table>
+                  </div>
+                  <div id="colorPickerDiv" data-role="none">
+                     <input type="text" id="colorPickerInput"  data-wcp-cssClass="picker" data-role="none" >
+                  </div>
+               </div>
+            </div>
+			
+            <div id="footer" data-role="footer" data-id="footer" data-position="fixed" data-theme="a" data-tap-toggle="false">
+               <div id="navbar1" data-role="navbar">
+                  <ul>
+                     <li><a id="map-button" href="#solidColor"  class="footerButton ui-state-persist" data-theme="a"><i class="icon-rainpipette footerIcon"></i><br>رنگ ثابت</a></li>
+                     <li><a class="footerButton" href="#Animation"><i style="" class="icon-rainplay-circled2 footerIcon"></i><br>انیمیشن</a></li>
+                   
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div  id="Animation" data-role="page">
+            <div data-role="header" data-id="header" data-position="fixed" data-theme="a" data-tap-toggle="false" data-hide-during-focus="false">
+                           <a href="#settingsPage"><i class="icon-rainwrench headerIcon"></i></a>
+               <h1>آیسانور</h1>
+			   <a href="#settingsPage" ><i class="icon-rainoff headerIcon"></i></a>
+            </div>
+            <div data-role="content" >
+			     <div id="listCreationSelectBoxContainer">
+                 <table style="width:95%; margin:auto;">
+				 <tr>
+				 <td style="width: 90%;vertical-align:middle;">
+				  <select name="select-native-1" id="animationDropDown" class="ui-icon-arrow-sort" data-icon="false">
+                     <!--This list is populated with jquery-->
+                     </select>
+				 </td>
+				 <td style="width: 10%;vertical-align:middle;">
+				  <a class="ui-btn" id="listAddButton"><i style="font-size: 1.3em; font-weight: bold;" class=" icon-rainplus"></i></a>
+				 </td>
+				 </tr>
+
+				 </table>
+				
+					
+              
+                </div>
+			<div id="listContainer">
+		<ol  id="olAnimationList">
+		
+		</ol>  
+		</div>
+<div id="listButtonDiv">
+
+		
+	
+				 <span class="leftButtonsSpan" style="padding:.2em;">
+				 <span style="color: white; font-size:0px;">a</span>  <!-- I added this because the first and last button was kind of clipped (when using css 'float').-->
+				 <a class="ui-btn" id="listMoveUpButton" style="display: inline; "><i style="font-size: 1.3em; font-weight: bold;" class="icon-rainangle-double-up listButtonIcons"></i></a>
+				 <a class="ui-btn" id="listMoveDownButton" style="display: inline;"><i style="font-size: 1.3em; font-weight: bold;" class="icon-rainangle-double-down listButtonIcons"></i></a>
+				 <span style="color: white; font-size:0px;">a</span>  <!-- I added this because the last button was kind of clipped. this one is for symmetry-->
+				 </span>
+				 <span class="rightButtonsSpan" style="padding:.2em;">
+				 <a class="ui-btn" id="listLoadSaveButton" style="display: inline;"><i style="font-size: 1.3em; font-weight: bold;" class="icon-rainlist-bullet listButtonIcons"></i></a>
+				 <a class="ui-btn" id="listSendButton" style="display: inline;"><i style="font-size: 1.3em; font-weight: bold;" class="icon-rainok listButtonIcons"></i></a>
+				 <span style="color: white; font-size:0px;">a</span> <!-- I added this because the first and last button was kind of clipped (when using css 'float').-->
+				 </span>
+	
+			
+				</div>
+
+ <div style="width:100%;" data-role="popup" id="listLoadSavePopup" data-overlay-theme="a" data-transition="pop" data-theme="a" class="ui-corner-all popupDialog">
+	<div style="background: #2c3e50; border-radius: inherit;">
+                         
+               <h1 style="font-size: 1em; color: #FFF;">ذخیره و بازیابی لیست</h1>           			
+	</div> 
+	
+<a class="ui-btn" id="listSaveButton" style="display: block;">ذخیره لیست<i style="margin: 5px; font-size: 1.3em; font-weight: bold;" class="icon-raindownload listButtonIcons"></i></a>
+				 <a class="ui-btn" id="listLoadButton" style="display: block;">بازیابی لیست<i style="margin: 5px; font-size: 1.3em; font-weight: bold;" class="icon-rainupload listButtonIcons"></i></a>
+			 
+		<!--	   <a href="#" class="loadsavebtn" id="saveButton" data-role="button" data-inline="false" data-theme="c">ذخیره</a>    
+                        <a href="#" class="loadsavebtn" id="loadButton" data-role="button" data-inline="false"  data-transition="flow" data-theme="a">فراخوانی</a>-->				
+            </div>
+			
+			 <div style="width:100%;" data-role="popup" id="listSavePopup" data-transition="pop" data-overlay-theme="a" data-theme="a" class="ui-corner-all popupDialog">
+	<div style="background: #2c3e50; border-radius: inherit;">
+                         
+               <h1 style="font-size: 1em; color: #FFF;">ذخیره لیست</h1>           			
+	</div> 
+	<table style="direction:rtl; margin: auto;">
+	<tr>
+	<td><p style="">ذخیره با عنوان:</p></td>
+	<td><input id="saveListNameInput" style="display: inline;" type="text" data-mini="true" value=""></td>
+	</tr>
+	</table>
+	
+
+	<div style="width:80%; margin: auto;">
+					 <a class="ui-btn" id="saveBtn" style="">ذخیره<i style="margin: 5px; font-size: 1.3em; font-weight: bold;" class="icon-raindownload listButtonIcons"></i></a>
+
+	</div>
+
+				
+            </div>
+			
+			<div style="width:100%;" data-role="popup" id="listLoadPopup" data-transition="pop" data-overlay-theme="a" data-theme="a" class="ui-corner-all popupDialog">
+	<div style="background: #2c3e50; border-radius: inherit;">
+                         
+               <h1 style="font-size: 1em; color: #FFF;">بازیابی لیست</h1>           			
+	</div> 
+	
+	
+
+	<table style="direction:rtl; margin: auto; width:90%;">
+	<tr>
+	<td style="width: 90%;" ><select style="width:100%;" name="select-native-1" id="savedListDropDown" class="ui-icon-arrow-sort" data-icon="false">
+                     <!--This list is populated with jquery-->
+                     </select></td>
+	<td><a class="ui-btn" id="listLoadDeleteButton" style="display: inline; background: #D22;"><i style="font-size: 1.3em; font-weight: bold; color: #FFF;" class="icon-raintrash listButtonIcons"></i></a></td>
+	</tr>
+	</table>
+
+	<div style="width:80%; margin: auto;">
+					 <a class="ui-btn" id="loadBtn" >بازیابی<i style="margin: 5px; font-size: 1.3em; font-weight: bold;" class="icon-rainupload listButtonIcons"></i></a>
+
+	</div>
+
+				
+            </div>
+			
+		<div id="successMsg" style="display: none;"></div>
+            <div  data-role="footer" data-id="footer" data-position="fixed" data-tap-toggle="false" data-theme="a">
+               <div id="navbar2" data-role="navbar">
+                  <ul>
+                     <li><a href="#solidColor"  class="footerButton" data-theme="a"><i class="icon-rainpipette footerIcon"></i><br>رنگ ثابت</a></li>
+                     <li><a  class="footerButton ui-state-persist" href="#Animation"><i style="" class="icon-rainplay-circled2 footerIcon"></i><br>انیمیشن</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+</div>
+   </body>
+</html>

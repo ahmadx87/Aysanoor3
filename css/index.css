@@ -1,0 +1,377 @@
+@font-face {
+    font-family:"koodak";
+    src: url('koodak.ttf');
+}
+
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+	font-family:"koodak";
+/*border: 1px;
+border-style: solid;*/
+}
+
+a {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+	font-family:"koodak";
+	border: 0px;
+border-style: solid;
+
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#FFFFFF;
+    background-image:linear-gradient(top, #CCC 0%, #FFFFFF 51%);
+    background-image:-webkit-linear-gradient(top, #CCC 0%, #FFFFFF 51%);
+    background-image:-ms-linear-gradient(top, #CCC 0%, #FFFFFF 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #CCC),
+        color-stop(0.51, #FFFFFF)
+    );
+    background-attachment:fixed;
+    font-size:1em;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+	
+}
+
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+h1 {
+    font-size:1.3em;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+/*///// header //////*/
+
+.ui-header > .ui-btn {
+    padding: 2px;
+    background:none;
+    border:none;
+    /*overflow:;*/
+}
+.ui-header .ui-title{
+margin: 0em;
+}
+
+/* home page */
+
+.centerText{
+    text-align:center;
+}
+
+
+.ui-grid-a .ui-block-a .ui-btn{
+    margin-left: 0px;
+}
+
+.ui-grid-a .ui-block-b .ui-btn{
+    margin-right: 0px;
+}
+
+/* map */
+
+
+
+.ui-btn-active {
+    border: 1px solid       #1abc9c /*{global-active-border}*/;
+    background:             #1abc9c /*{global-active-background-color}*/;
+    font-weight: bold;
+    color:                  #ffffff /*{global-active-color}*/;
+    cursor: pointer;
+    text-decoration: none;
+  font-family: Lato, sans-serif
+}
+
+
+.SliderTitle{
+	display:block;
+	direction:rtl;
+	text-align:right;
+	padding: 0em 1em;
+	font-family:"koodak";
+	border:0px 0px;
+	font-size: 1.1em;
+	line-height: 1em;
+	margin:0.5em 0em;
+}
+
+
+ /* hide input for slider */
+.ui-mobile .ui-page .ui-slider-input,
+.ui-mobile .ui-dialog .ui-slider-input {
+    display : none;
+}
+
+div.ui-slider-track {
+    margin: 0 15px 0 15px !important;
+}
+
+#colorPickerDiv{
+
+margin: auto;
+}
+
+#colorPickerInput{
+width: 500px;
+height: 500px;
+}
+
+.picker{
+	width: 100%;
+	height: 100%;
+}
+
+#animationDropDown{
+	direction:rtl;
+}
+ 
+ #brightnessSliderDiv .ui-btn-active{background-color:#ffbd19;border-color:#4e6d8d;color:#fff}
+
+ #colorPickerRGBIcon{
+ 	 position: relative;
+ }
+ 
+ #RGBTable{
+	 position: absolute;
+	 top: 0em;
+	float: left;
+	
+ }
+ 
+ .colorLetterCell{
+ font-size: .7em;
+ font-weight: bold;
+margin: 0px;
+ }
+ 
+.colorCodeCell{
+ font-size: .7em;
+ }
+ 
+
+ 
+ #colorSliderRCell .ui-btn-active{background-color:#B00}
+ #colorSliderGCell .ui-btn-active{background-color:#0B0}
+ #colorSliderBCell .ui-btn-active{background-color:#00B}
+
+ #colorSliderRCell  .ui-slider-track .ui-btn.ui-slider-handle{background-color:#A00}
+ #colorSliderGCell  .ui-slider-track .ui-btn.ui-slider-handle{background-color:#0A0}
+ #colorSliderBCell  .ui-slider-track .ui-btn.ui-slider-handle{background-color:#00A}
+ 
+ 
+#okButtonRGBDialog, #cancelButtonRGBDialog, .footerButton{
+font-family:"koodak";
+}
+
+.colorSlider, .sliderValRGB{
+font-family:"sans-serif";
+font-weight: bold;
+display:inline;
+direction:ltr;
+}
+
+/*  /////  icons  ///// */
+i.listButtonIcons{
+text-align:center;
+	top: 2px;
+    position: relative;
+}
+
+i.headerIcon{
+font-size:2em;
+text-align:center;
+	top: 2px;
+    position: relative;
+}
+
+i.footerIcon{
+	position:relative;
+	top: 2px;
+font-size:1.1em;
+}
+
+.footerButton{
+padding:5px;
+margin:0px;
+}
+
+.ui-icon-arrow-sort:after {
+  content:"\e803";
+  font: normal normal normal 20px/1 rain;
+  position: absolute;
+  top: 1px;
+  bottom: 0;
+  margin: 0 auto;
+  right: 5px;
+  line-height: 2em;
+}
+
+ol { list-style: none; margin: 0em 0em 0em 0em; padding: 0;}
+li { 
+color: #FFF;
+background: rgba(44, 62, 80,.5);
+position:relative; 
+margin: 2px 1px; 
+padding: 0.4em .6em; 
+border: 2px solid rgba(10,50,220,.4); 
+list-style: none; 
+font-size:.9em; 
+float:center; 
+text-align: right;
+direction:rtl;
+}
+
+li .handle {position: absolute; color:#C00; left: 0.1em; font-size:1.3em;}
+.ui-selecting { background: rgba(78, 109, 141,0.6)}
+.ui-selecting .handle { }
+.ui-selected { background: rgba(78, 109, 141,0.99) }
+.ui-selected .handle {  }
+
+
+#listContainer{
+	position: fixed;
+    top: 7.2em;
+	left: .5em;
+	right:.5em;
+	bottom: 6em;
+	overflow-y:auto;
+    overflow-x:hidden;
+	padding-left:1em;
+	padding-right:1em;
+	border-top: 1px solid #4e6d8d;
+	border-bottom: 1px solid #4e6d8d;
+	background: -webkit-linear-gradient(top, rgba(78,109,141,0.4) 0%,rgba(78,109,141,0) 10%,rgba(78,109,141,0) 90%,rgba(78,109,141,0.4) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(78,109,141,0.4) 0%,rgba(78,109,141,0) 10%,rgba(78,109,141,0) 90%,rgba(78,109,141,0.4) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+#listButtonDiv{
+	position: fixed;
+	left: 0em;
+	right:0em;
+	bottom: 3.3em;
+	overflow-y:hidden;
+	overflow-y:hidden;
+    overflow-x:hidden;
+}
+
+#listCreationSelectBoxContainer{
+	position: fixed;
+    top: 4em;
+	left: 1em;
+	right:1em;
+	bottom: 3.4em;
+	overflow-y:auto;
+    overflow-x:hidden;
+
+}
+
+
+#listCreationSelectBoxContainer a.ui-btn{
+    border-width: 0px;
+}
+
+#listCreationSelectBoxContainer .ui-select{
+	direction:rtl;
+}
+
+#listButtonDiv a.ui-btn{
+    border-width: 0px;
+}
+
+#listAddButton{
+margin: auto;
+background: #00c645;
+height:1.5em;
+width: 1.7em;
+}
+#listLoadSaveButton{
+background: #8e0099;
+}
+#listSendButton{
+background: #008dce;
+}
+
+.ui-btn:active{opacity:0.5;}
+
+.leftButtonsSpan{
+float: left;
+}
+
+.rightButtonsSpan{
+float: right;
+}
+
+.loadsavebtn{
+	position: relative;
+	margin: 0px;
+	font-family:"koodak";
+	top: -5px;
+}
+
+
+
+#successMsg{
+opacity:0.6;
+padding: .1em .4em;
+border-radius: 5px;
+position: absolute;
+background-color: #1a2530;
+color: #EEE;
+bottom: 4em;
+font-family:"koodak";
+text-decoration:rtl;
+}
+
+#successMsg i{
+	position:relative;
+	top:2px;
+}
+
+span .ui-btn, #listAddButton, #listLoadDeleteButton{
+border-radius:.4em;
+}
+#listLoadSavePopup{
+	background: #4e6d8d;
+}
+
+#listSaveButton, #listLoadButton {
+	border-radius:.4em;
+	font-size: 1em; 
+	font-weight: bold;
+	width: 90%;
+	margin: 10px auto;
+	font-family: "koodak";
+}
+#saveBtn, #loadBtn{
+	border-radius:.4em;
+	font-family: "koodak";
+}
+
+#listSaveButton{
+	background: #4a8230;
+}
+
+#listLoadButton{
+	background: #c69523;
+}
+
+#savedListDropDown .ui-select{
+	width: 80%;
+}
+
+#saveListNameInput{
+	border-bottom: 1px solid #AAF;
+}
